@@ -1,9 +1,6 @@
-# project name goes here
+Battleship game
 
 Project Outline:
 
-This is a project I undertook as part of The Odin Project curriculum. The primary objective of this project was to...
-
+Coding a Battleship game as a project from the odin project
 Challenges:
-
-Completed -date-
