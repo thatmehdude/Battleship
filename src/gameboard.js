@@ -67,4 +67,8 @@ export default class Gameboard {
     cell.ship.takeHit();
     return true;
   }
+
+  areAllShipsSunk() {
+    return this.ships.every(ship => ship.sunk);
+  }
 }
