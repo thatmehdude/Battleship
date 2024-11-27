@@ -1,5 +1,4 @@
 /* eslint-disable no-plusplus */
-import Ship from './ship';
 
 export default class Gameboard {
   constructor(size = 10) {
@@ -48,6 +47,24 @@ export default class Gameboard {
       };
     }
     this.ships.push(ship);
+    return true;
+  }
+
+  receiveAttack(x, y) {
+    if (!this.isValidCoordinate) {
+      throw new Error('not a valid coordinate');
+    }
+    const cell = this.board[y][x];
+
+    if (cell === null) {
+      this.missedAttacks.push({ x, y });
+      return false;
+    }
+    if (cell.hit) {
+      return false;
+    }
+    cell.hit = true;
+    cell.ship.takeHit();
     return true;
   }
 }
